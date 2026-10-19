@@ -1,0 +1,11 @@
+덕랩 임베딩 벤치 — 데이터 라이선스
+
+suites/*/questions.jsonl · suites/*/errata.yaml · suites/*/suite.yaml · export/*.json
+(질문 · 정답 지정 · 정오표 · 결과)는 Creative Commons Attribution 4.0 International (CC BY 4.0)
+으로 공개합니다. 쓰실 때 출처를 '덕랩 임베딩 벤치 (Deoklab)'로 밝혀 주세요.
+https://creativecommons.org/licenses/by/4.0/deed.ko
+
+suites/*/corpus.jsonl 의 법령 조문과 판결문은 저작권법 제7조(보호받지 못하는 저작물)
+제1호(법률·명령 등)와 제3호(법원의 판결·결정 등)에 해당합니다. 위 라이선스의 대상이 아닙니다.
+
+코드(bench.py · test_bench.py · tools/)는 LICENSE(MIT)를 따릅니다.

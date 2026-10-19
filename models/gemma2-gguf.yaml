@@ -1,6 +1,6 @@
 # EmbeddingGemma 2 GGUF Q8_0 (ggml-org/embeddinggemma-2-GGUF) · LM Studio 에 -c 8192 로 올린 뒤 잰다. 법지도 10-17 의 gemma2
 runtime: lmstudio
-url: http://localhost:1234/v1/embeddings   # LM Studio 주소. 자기 환경에 맞게
+url: http://localhost:1234/v1/embeddings
 id: text-embedding-embeddinggemma-2
 revision: ggml-org/embeddinggemma-2-GGUF Q8_0
 dims: 768
