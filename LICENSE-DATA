@@ -1,8 +1,8 @@
-덕랩 임베딩 벤치 — 데이터 라이선스
+한국어 문서 검색 벤치 (첫 판: 법률 7개 분야 · 덕랩) — 데이터 라이선스
 
 suites/*/questions.jsonl · suites/*/errata.yaml · suites/*/suite.yaml · export/*.json
 (질문 · 정답 지정 · 정오표 · 결과)는 Creative Commons Attribution 4.0 International (CC BY 4.0)
-으로 공개합니다. 쓰실 때 출처를 '덕랩 임베딩 벤치 (Deoklab)'로 밝혀 주세요.
+으로 공개합니다. 쓰실 때 출처를 '한국어 문서 검색 벤치 (덕랩, Deoklab)'로 밝혀 주세요.
 https://creativecommons.org/licenses/by/4.0/deed.ko
 
 suites/*/corpus.jsonl 의 법령 조문과 판결문은 저작권법 제7조(보호받지 못하는 저작물)
