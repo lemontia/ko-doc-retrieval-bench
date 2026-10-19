@@ -1,0 +1,11 @@
+# KURE-v1 (bge-m3 미세조정, 문서당 벡터 하나). KURE-v2(ColBERT)와 같은 입력 형식으로 — 점수 차이가 방식 차이인지 보려고
+runtime: st
+id: nlpai-lab/KURE-v1
+revision: 8b418a58414668e75532ed045c22d9ca018ae2b2
+max_seq: 8192          # 카드 sentence_bert_config 그대로
+dims: 1024
+doc: "{title}\n{body}"   # 카드에 접두어(prompts) 없음 — kure2 와 같게
+doc_by_kind:
+  판례: "{body}"
+query: "{q}"
+requires: [sentence-transformers==6.1.0, transformers==5.19.0, torch==2.14.1]   # gemma2 와 같은 버전

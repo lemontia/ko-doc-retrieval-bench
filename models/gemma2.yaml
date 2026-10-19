@@ -1,0 +1,10 @@
+# EmbeddingGemma 2 원본 가중치 (sentence-transformers)
+runtime: st
+id: google/embeddinggemma-2
+revision: 914f7f89142e33e77833254d9c9b90c3cef7303b
+max_seq: 8192          # 카드 최대. 2048 이면 법령검색 긴 판례 28건이 잘린다(10-18 확인)
+dims: 768
+dtype: bfloat16       # transformers 5 기본(auto)이 이 값 — 운영 색인도 bf16 으로 돈다. 벡터 길이가 1 에서 ±0.4% 흔들리는 정도의 정밀도
+doc: "title: {title} | text: {body}"          # 카드 원문
+query: "task: search result | query: {q}"     # 카드 원문 (prompt_name SearchQuery)
+requires: [sentence-transformers==6.1.0, transformers==5.19.0, torch==2.14.1, torchvision==0.29.1, pillow]

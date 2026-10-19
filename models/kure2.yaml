@@ -1,0 +1,9 @@
+# KURE-v2 (ColBERT, pylate). 질의·문서 접두어 [Q]/[D] 와 질의 64토큰 확장은 pylate 가 카드 설정대로 붙인다
+runtime: pylate
+id: nlpai-lab/KURE-v2
+revision: 3431f86d399d666083890dbb882aced6708873bc
+doc: "{title}\n{body}"
+doc_by_kind:
+  판례: "{body}"       # 법령검색 판례 본문은 사건명으로 시작한다 — 법지도 10-17 과 같게
+query: "{q}"
+requires: [pylate==1.6.0, transformers==5.3.0, torch==2.11.0]   # 법지도 10-17 venv 와 같은 버전

@@ -1,0 +1,18 @@
+name: 법령검색
+version: 1
+public: yes
+desc: 노동법령 조문 2,346 + 판례 3,483 에서 실무 상담 말투 질문의 정답 문서 하나를 찾는다 (known-item)
+source: deoklab-content/dev/beopjido/bench/embed (2026-10-17, 시드 20261017) — 만든 방법은 그 폴더 results.md
+recall_at: [1, 5, 10]
+mrr_at: null        # 전체 순위로 MRR
+hidden:             # 2026-10-18 루시안. 문항은 questions.hidden.jsonl — export 엔 점수만
+  n: 50             # 조문 35 · 판례 15
+  seed: 20261018    # pick_hidden.py
+  overlap: {mean: 0.192, max: 0.385, rewrite_over: 0.45}
+  author: Claude (공개 문항과 같은 방법)
+fixed: 2026-10-18   # v1 고정(박대표). 이후 문항·정답·채점·입력 형식은 바꾸지 않는다 — 바꾸면 v2. 묶는 방식·dtype·max_seq 는 models/*.yaml @ 4e0919a 그대로
+fixed_hashes: {corpus: c1a81d3ab051, questions: 599b85f99fef, hidden: 39d7a138dab2}   # 고정 시점(4599dd4 와 같은 내용) — test_fixed_suites_unchanged 가 본다
+overlap:            # 질문과 정답 문서의 낱말 겹침 — 키워드 맞추기로 풀리는 문항을 막는 검사
+  method: "질문을 한글·숫자·영문만 남겨 어절로 나누고, 두 글자 이상 어절은 두 글자 조각(bigram)으로 쪼갠다. 그 조각 종류 가운데 정답 문서 text(조문은 법 이름·조 제목 포함)에도 나오는 비율. 법지도 bench/embed/pick.py overlap · engine/index.py toks"
+  limit: 0.45       # 이상이면 다시 썼다
+  rewritten: "공개 100문항 중 5문항을 다시 썼다(한 문항은 두 번). 출처 법지도 bench/embed/results.md. 숨김 50문항은 겹침 때문에 다시 쓴 문항 0, 정답이 둘로 읽혀 고친 문항 1"

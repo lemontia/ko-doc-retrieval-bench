@@ -1,0 +1,6 @@
+[project]
+name = "bench-embed"
+version = "0.1.0"
+requires-python = ">=3.11"
+# 모델별 라이브러리는 models/*.yaml 의 requires — bench.py run 이 그 환경으로 다시 띄운다
+dependencies = ["numpy", "pyyaml"]

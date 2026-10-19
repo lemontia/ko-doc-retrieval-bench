@@ -1,0 +1,14 @@
+name: 형사
+version: 1
+public: yes
+desc: 형법·형사소송법·특가법·성폭력처벌법·도로교통·교통사고특례와 형사 판례
+source: tools/law_suites.py (법령 기준일 2026-10-16 · 판례 상한 4000 · 시드 20261018)
+laws: ["형법", "형사소송법", "특정범죄가중처벌등에관한법률", "성폭력범죄의처벌등에관한특례법", "도로교통법", "교통사고처리특례법"]
+recall_at: [1, 5, 10]
+mrr_at: null
+fixed: 2026-10-19   # v1 고정(박대표가 파인만에게 위임, 10-19). 이후 문항·정답·채점·입력 형식은 바꾸지 않는다 — 바꾸면 v2. 정답 오류는 errata.yaml 에만 더한다. 묶는 방식·dtype·max_seq 는 models/*.yaml @ 314f83b 그대로
+fixed_hashes: {corpus: 349154108e71, questions: 96a6a2fac2df, hidden: 16d4e2efd4d7, errata: 17d8494aa2ec}
+overlap:            # 질문과 정답 문서의 낱말 겹침 — 키워드 맞추기로 풀리는 문항을 막는 검사
+  method: "질문을 한글·숫자·영문만 남겨 어절로 나누고, 두 글자 이상 어절은 두 글자 조각(bigram)으로 쪼갠다. 그 조각 종류 가운데 정답 문서 본문(조문은 법 이름·조 제목 포함)에도 나오는 비율. 법지도 engine/index.py toks · tools/law_suites.py overlap"
+  limit: 0.45       # 이상이면 다시 썼다. finalize 가 0.45 이상을 막는다
+  rewritten: 기록 없음   # 문항을 쓴 에이전트가 0.45 이상을 몇 번 고쳐 썼는지는 남기지 않았다. 최종 문항은 전부 0.45 미만

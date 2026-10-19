@@ -1,0 +1,11 @@
+# bge-m3 원본(BAAI). KURE-v1 의 바탕 모델 — kure1 과 같은 설정으로 재서 한국어 미세조정이 보탠 몫을 본다(10-19 박대표: 이번엔 이 하나만)
+runtime: st
+id: BAAI/bge-m3
+revision: 5617a9f61b028005a4858fdac845db406aefb181
+max_seq: 8192          # 카드 최대 길이
+dims: 1024
+doc: "{title}\n{body}"   # 카드에 접두어 없음 — kure1·kure2 와 같게
+doc_by_kind:
+  판례: "{body}"
+query: "{q}"
+requires: [sentence-transformers==6.1.0, transformers==5.19.0, torch==2.14.1]   # kure1 과 같은 버전
